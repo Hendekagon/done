@@ -5,18 +5,17 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.170"]
+                 [org.clojure/clojurescript "1.7.228"]
                  [org.clojure/core.async "0.2.374"]
                  [org.clojure/core.match "0.3.0-alpha4"]
                  [figwheel-sidecar "0.5.0"]
                  [org.omcljs/om "0.9.0"]
                  [sablono "0.5.0"]
-                 [cljsjs/react "0.14.3-0"]
+                 ;[cljsjs/react "0.14.3-0"]
                  [cljsjs/react-dom "0.14.3-1"]
                  [cljsjs/react-dom-server "0.14.3-0"]
-                 [reagent "0.5.1"]
-                 [quiescent "0.2.0-RC2"]
-                 [garden "1.3.0"]
+                 ;[garden "1.3.0"]
+                 [hendekagon/garden "1.3.1-SNAPSHOT"]
                  ]
 
   :plugins [[lein-cljsbuild "1.1.1"]]
@@ -26,24 +25,24 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
   :cljsbuild {:builds
-              [{:id "dev"
+              [
+               {
+                :id "dev"
                 :source-paths ["src"]
-
                 :figwheel {:on-jsload "done.main/on-js-reload"}
-
                 :compiler {:main done.main
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/done.js"
                            :output-dir "resources/public/js/compiled/out"
+                           :optimizations :advanced
                            :source-map-timestamp true}}
-               ;; This next build is an compressed minified build for
-               ;; production. You can build this with:
-               ;; lein cljsbuild once min
-               {:id "min"
+
+               {
+                :id "min"
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/done.js"
                            :main done.main
-                           :optimizations :none
+                           :optimizations :advanced
                            :pretty-print false}}]}
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"

@@ -1,4 +1,4 @@
-(ns done.figs
+(ns done.build.figs
   (:use
     [figwheel-sidecar.repl-api]))
 

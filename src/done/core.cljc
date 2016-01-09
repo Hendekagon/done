@@ -30,18 +30,18 @@
     {
       :animate true
       :tm-rule-table test-tm1
-      :tm-state [0 0 [(repeat 0) (repeat 0)]]
+      :tm-state [0 0 [(repeat 1024 0) (repeat 1024 0)]]
       :tm (tm (tmfn-from-rule-table test-tm1))
       :in-dt true
       :fdt 0
-      :update-interval 256
+      :update-interval 128
       :t 0
       }))
 
 (defn restart [s]
   (assoc s
     :t 0
-    :tm-state [0 0 [(repeat 0) (repeat 0)]]
+    :tm-state [0 0 [(repeat 1024 0) (repeat  1024 0)]]
     :tm (tm (tmfn-from-rule-table (:tm-rule-table s)))))
 
 (defn update-state [s]

@@ -56,7 +56,9 @@
                 :font-size "2em" :padding "0.5em"
                 :cursor "pointer" :background "rgb(230,230,230)"
                 :border :none
-                :border-radius "4px"}]
+                :border-radius "8px"
+                :user-select :none
+                :-webkit-user-select :none}]
    [:.button:hover {:background "rgb(250,250,250)"}]
    [:.iterations {:padding "1em"}]
    ])

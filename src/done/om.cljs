@@ -87,10 +87,7 @@
          (om/build rule-table-component (:tm-rule-table state))
          [:div {:className "iterations"} (str "iteration " (:t state))]
          [:div {:className "button"
-                :onClick
-                (fn [e]
-                  (om/transact! state restart)
-                   nil)}
+                :onClick (fn [e] (om/transact! state restart) nil)}
                   "restart"]]))))
 
 (defn start

@@ -1,39 +1,22 @@
 # done
 
-FIXME: Write a one-line description of your library/project.
+Watch Turing Machines
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+A little Turing Machine viewer
 
-## Setup
+The matrix represents the transition rules, a row for each state, two columns
+ one for each possible input 0,1 then a vector of `[next-state output motion]`
 
-To get an interactive development environment run:
+## Building
 
-    lein figwheel
+(use 'done.build.build) (cljs-build)
 
-and open your browser at [localhost:3449](http://localhost:3449/).
-This will auto compile and send all changes to the browser without the
-need to reload. After the compilation process is complete, you will
-get a Browser Connected REPL. An easy way to try it is:
-
-    (js/alert "Am I connected?")
-
-and you should see an alert in the browser window.
-
-To clean all compiled files:
-
-    lein clean
-
-To create a production build run:
-
-    lein cljsbuild once min
-
-And open your browser in `resources/public/index.html`. You will not
-get live reloading, nor a REPL. 
+Or, in IntelliJ setup a figwheel repl and use done.build.figs in the parameters
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2016 Matthew Chadwick
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
